@@ -3,7 +3,7 @@
     "debug": true,
     "verify_ssl": true,
     "backup_dir": "_OUTPUT_",
-    "backup_file_format": "%Y%m%d%H%M",
+    "backup_file_format": "%d%H%M",
     "pretty_print": false
   },
   "grafana": {

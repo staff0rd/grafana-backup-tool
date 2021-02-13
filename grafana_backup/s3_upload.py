@@ -1,4 +1,5 @@
 import boto3
+from datetime import datetime
 from botocore.exceptions import NoCredentialsError
 
 
@@ -27,7 +28,7 @@ def main(args, settings):
         endpoint_url=aws_endpoint_url
     )
 
-    s3_object = s3.Object(aws_s3_bucket_name, '{0}/{1}'.format(aws_s3_bucket_key, s3_file_name))
+    s3_object = s3.Object(aws_s3_bucket_name, '{0}/{1}/{2}'.format(aws_s3_bucket_key, datetime.now().strftime("%Y/%m"), s3_file_name))
 
     try:
         s3_object.put(Body=open(archive_file, 'rb'))
